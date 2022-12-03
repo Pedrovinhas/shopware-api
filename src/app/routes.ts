@@ -1,6 +1,11 @@
 import { Router } from 'express';
+import { upload } from './middleware/upload';
+
 import { createCategories } from './useCases/categories/createCategory';
 import { listCategories } from './useCases/categories/listCategories';
+import { listProductsByCategory } from './useCases/categories/listProductsByCategory';
+import { createOrder } from './useCases/orders/createOrder';
+import { listOrders } from './useCases/orders/listOrders';
 import { createProduct } from './useCases/products/createProduct';
 import { listProducts } from './useCases/products/listProducts';
 
@@ -16,27 +21,21 @@ router.post('/categories', createCategories);
 router.get('/products', listProducts);
 
 // Create products
-router.post('/products', createProduct);
+router.post('/products', upload.single('image'), createProduct);
+
+// Get products by category
+router.get('/categories/:categoryId/:products', listProductsByCategory);
 
 // List one product
 router.get('/categories/products/:productId', (req, res) => {
   res.send('OK');
 });
 
-// Get products by category
-router.get('/categories/:products', (req, res) => {
-  res.send('OK');
-});
-
 // List orders
-router.get('/orders', (req, res) => {
-  res.send('OK');
-});
+router.get('/orders', listOrders);
 
 // Create order
-router.post('/orders', (req, res) => {
-  res.send('OK');
-});
+router.post('/orders', createOrder);
 
 // Change order status
 router.patch('/orders/:orderId', (req, res) => {

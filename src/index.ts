@@ -1,3 +1,4 @@
+import path from 'node:path';
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './app/routes';
@@ -9,6 +10,7 @@ mongoose.connect(MONGO_CONNECTION)
     const app = express();
     const port = 3003;
 
+    app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
     app.use(express.json());
     app.use(router);
 
@@ -21,3 +23,4 @@ mongoose.connect(MONGO_CONNECTION)
 
 
 
+ 

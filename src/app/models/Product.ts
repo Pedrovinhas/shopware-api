@@ -9,7 +9,7 @@ export const Product = model('Product', new Schema({
     type: String,
     required: true,
   },
-  value: {
+  price: {
     type: Number,
     required: true,
   },
@@ -18,8 +18,20 @@ export const Product = model('Product', new Schema({
     required: true,
   },
   rating: {
-    type: String,
+    type: Number,
   },
+  productAttributes: [{
+    size: {
+      type: String,
+    }, 
+    brand: {
+      type: String,
+      required: true,
+    },
+    color: {
+      type: String,
+    }
+  }],
   category: {
     type: Schema.Types.ObjectId,
     required: true,
