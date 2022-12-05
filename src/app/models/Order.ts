@@ -3,8 +3,8 @@ import { model, Schema } from 'mongoose';
 export const Order = model('Order',  new Schema({
   status: {
     type: String,
-    enum: ['WAITING', 'SHIPPING', 'DONE'],
-    default: 'WAITING'
+    enum: ['PROCESSING', 'CONFIRMED', 'CANCELLED'],
+    default: 'PROCESSING'
   },
   createdAt: {
     type: Date,
