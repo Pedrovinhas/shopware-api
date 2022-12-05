@@ -15,7 +15,9 @@ export const Product = model('Product', new Schema({
   },
   imagePath: {
     type: String,
-    required: true,
+  },
+  imageUrl: {
+    type: String,
   },
   rating: {
     type: Number,

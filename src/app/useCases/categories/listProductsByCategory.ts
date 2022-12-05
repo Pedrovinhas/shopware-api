@@ -6,7 +6,7 @@ export async function listProductsByCategory(req: Request, res: Response) {
   try {
     const { categoryId } = req.params;
     
-    const products = await Product.find().where('category').equals(categoryId);
+    const products = await Product.find().where('category').equals(categoryId).populate('category');
   
     res.status(200).json(products);
   } catch (error) {

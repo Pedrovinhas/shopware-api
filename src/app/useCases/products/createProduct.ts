@@ -5,12 +5,13 @@ import { Product } from '../../models/Product';
 export async function createProduct(req: Request, res: Response) {
   try {
     const imagePath = req.file?.filename || '';
-    const { name, model, price, rating, category, productAttributes } = req.body;
-
+    const { name, model, price, rating, category, productAttributes, imageUrl } = req.body;
+    
     const product = await Product.create({
       name,
       model,
       imagePath,
+      imageUrl,
       price: Number(price),
       category,
       rating: Number(rating),
