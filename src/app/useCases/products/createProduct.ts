@@ -5,7 +5,7 @@ import { Product } from '../../models/Product';
 export async function createProduct(req: Request, res: Response) {
   try {
     const imagePath = req.file?.filename || '';
-    const { name, model, price, rating, category, productAttributes, imageUrl } = req.body;
+    const { name, model, price, rating, category, size, color, brand, imageUrl } = req.body;
     
     const product = await Product.create({
       name,
@@ -15,7 +15,9 @@ export async function createProduct(req: Request, res: Response) {
       price: Number(price),
       category,
       rating: Number(rating),
-      productAttributes: productAttributes ? JSON.parse(productAttributes) : [],
+      size,
+      color,
+      brand,
     });
   
     res.status(201).json(product);
