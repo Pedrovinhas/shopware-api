@@ -2,6 +2,7 @@ import path from 'node:path';
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './app/routes';
+import 'dotenv/config';
 
 const MONGO_CONNECTION = 'mongodb+srv://mongo:y6mkzuCTVKWrQ61C@cluster0.3hnfkpo.mongodb.net/?retryWrites=true&w=majority';
 

@@ -21,6 +21,9 @@ import { registerUser } from './useCases/users/registerUser';
 import { listUsers } from './useCases/users/listUsers';
 import { loginUser } from './useCases/users/login';
 import { index } from './useCases/users';
+import { registerWithPhone } from './useCases/users/registerWithPhone';
+import { loginWithOtp } from './useCases/users/loginWithOtp';
+import { listUserOrders } from './useCases/orders/listUserOrders';
 
 export const router = Router();
 
@@ -51,8 +54,11 @@ router.get('/:categoryId/products/:productId', listOneProductByCategory);
 // List orders
 router.get('/orders', listOrders);
 
+// List orders
+router.get('/orders/user', authMiddleware, listUserOrders);
+
 // Create order
-router.post('/orders', createOrder);
+router.post('/orders', authMiddleware, createOrder);
 
 // Change order status
 router.patch('/orders/:orderId', changeOrderStatus);
@@ -60,15 +66,21 @@ router.patch('/orders/:orderId', changeOrderStatus);
 // Delete/cancel order
 router.delete('/orders/:orderId', cancelOrder);
 
-// Register user
+// Register user with email and password
 router.post('/register', registerUser);
+
+// Register user with phone 
+router.post('/register/phone', registerWithPhone);
 
 // List users
 router.get('/users', listUsers);
 
 // Protected Route
-router.get('/user', authMiddleware, index); // Must inform BEARERtoken to access this route.
+router.get('/auth', authMiddleware, index); // Must inform BEARERtoken to access this route.
 
-// Auth
-router.post('/auth', loginUser);
+// Auth with OTP
+router.post('/login/phone', loginWithOtp);
+
+// Auth with Password
+router.post('/login', loginUser);
 
