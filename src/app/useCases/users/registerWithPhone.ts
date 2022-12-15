@@ -2,16 +2,18 @@ import { Request, Response } from 'express';
 
 import User from '../../models/User';
 
-export async function registerUser(req: Request, res: Response) {
+export async function registerWithPhone(req: Request, res: Response) {
   const { 
-    name, 
-    email, 
-    password, 
-    phone 
+    phone,
+    password,
+    otp,
+    email,
   } = req.body;
+
+
   
   try {
-    const userExists = await User.findOne({ email });
+    const userExists = await User.findOne({ phone });
 
     if(userExists) {
       return res.status(400).json({
@@ -20,11 +22,12 @@ export async function registerUser(req: Request, res: Response) {
       });
     }
 
+    const hasEmail = email === '' ? `random${Math.round(Math.random() * 100)}@hotmail.com` : email;
+
     const user = await User.create({ 
-      name,
-      email,
-      password,
       phone,
+      password: Math.floor(Math.random() * 10000),
+      email: hasEmail,
       otp : process.env.OTP_CODE
     });
   

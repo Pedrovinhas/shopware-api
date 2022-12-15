@@ -1,15 +1,14 @@
 import { Request, Response } from 'express';
 
-import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 import User from '../../models/User';
 
-export async function loginUser(req: Request, res: Response) {
+export async function loginWithOtp(req: Request, res: Response) {
   try {
-    const { email, password } = req.body;
+    const { otp , phone } = req.body;
 
-    const user = await User.findOne({ email }).select('+password');
+    const user = await User.findOne({ phone }).select('+password');
     console.log(user);
 
     if(!user) {
@@ -19,21 +18,21 @@ export async function loginUser(req: Request, res: Response) {
       });
     }
 
-    console.log(user?.password, 'oi');
-    console.log(password);
-    
-    const isValidPassword = await bcrypt.compare(password, user!.password);
+    console.log(otp);
+    console.log(user?.otp);
+  
+ 
 
-    if(!isValidPassword) {
+    if(process.env.OTP_CODE !== otp ) {
       return res.status(401).json({
-        error: 'Password incorrect',
-        message: 'Password not valid'
+        error: 'OTP ERROR',
+        message: 'OTP is invalid'
       });
     }
 
     const token = jwt.sign({ id: user?.id}, 'secret', { expiresIn: '1d'}); // secret must be in .env to avoid 
     
-    const userWithoutPassword = await User.findOne({email});
+    const userWithoutPassword = await User.findOne({phone});
     return res.json({
       userWithoutPassword,
       token
