@@ -5,14 +5,23 @@ import bcrypt from 'bcryptjs';
 const User = new mongoose.Schema({
   name: {
     type: String,
+  },
+  phone: {
+    type: String,
     required: true,
+  },
+  otp: {
+    type: String,
+    required: true,
+    length: 3
   },
   email: {
     type: String,
-    required: true,
     unique: true,
     lowercase: true,
     match: /.+@.+\..+/,
+    sparse: true,
+    index: true,
   },
   password: {
     type: String,
@@ -22,7 +31,7 @@ const User = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  }
+  },
 });
 
 User.methods.matchPassword = async function(enteredPassword: string) {
