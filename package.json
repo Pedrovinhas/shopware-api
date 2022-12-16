@@ -4,10 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn run tsc",
+    "build": "tsc",
     "dev": "nodemon --files src/index.ts ",
-    "start": "node dist",
-    "tsc": "tsc"
+    "start": "node dist"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
