@@ -1,10 +1,12 @@
-import path from 'node:path';
+// import path from 'node:path';
+import * as path from 'path';
 import express from 'express';
 import mongoose from 'mongoose';
 import { router } from './app/routes';
 import 'dotenv/config';
 
 const PORT = process.env.PORT || 3003;
+
 
 mongoose.connect(`${process.env.MONGODB_URI}`)
   .then(() => {
@@ -19,7 +21,7 @@ mongoose.connect(`${process.env.MONGODB_URI}`)
       next();
     });
     app.use(express.static('public'));
-    // app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
+    app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
     app.use(express.json());
     app.use(router);
 
