@@ -10,9 +10,23 @@
       <img alt="Último commit" src="https://img.shields.io/github/last-commit/pedrovinhas/twitter-storybook?color=1B4B66&labelColor=F7F9FA">
       <img alt="Licença" src="https://shields.io/badge/license-MIT-ff7f00&?&style=flat?&color=1B4B66&labelColor=F7F9FA">
   </p>  
+  
+## 📌 Sumário
+- [Api](##Shopware-API)
+- [Models](##Models)
+- [Endpoints](##Endpoints)
 
-## Shopware-API 🛍
-- Esse é o back-end usado para armazenar as informações de estoque dos produtos e disponibilizado para o front-end consumir os dados.
+## 🛍 Shopware-API 
+- Esse é o back-end usado durante o último projeto do Programa de Bolsas da Compass Uol. O objetivo dele é armazenar as informações do e-commerce Shopware e disponibiliza-las para o consumo de dados no Front-End.
+
+## Bibliotecas
+
+- [Express](https://expressjs.com/pt-br/)
+- [Mongoose](https://mongoosejs.com/)
+- [JWT](https://jwt.io/)
+- [BCrypt](https://www.npmjs.com/package/bcrypt)
+- [Multer](https://www.npmjs.com/package/multer)
+
 
 ## 📔 Models
 
@@ -21,6 +35,7 @@
 | Product | 
 | Category |   
 |  Orders | 
+|  User | 
 
 ### Product Diagram
 | Name   | Type       |
@@ -50,7 +65,7 @@
 |  createdAt | `Date` | 
 |  products | `[ {Schema.Types.ObjectId} ]` | 
 
-## Endpoints
+## 📑Endpoints
 
 | Collection   | URL       | METHOD |
 | :---------- | :--------- |:--------- |
