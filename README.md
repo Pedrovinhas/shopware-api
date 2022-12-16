@@ -5,10 +5,7 @@
   >
 </h1>
  <p align="center">
-      <img alt="Linguagem mais usada na aplicação" src="https://img.shields.io/github/languages/top/pedrovinhas/twitter-storybook?color=1B4B66&labelColor=F7F9FA">
-      <img alt="Linguagens usadas" src="https://img.shields.io/github/languages/count/pedrovinhas/twitter-storybook?color=1B4B66&labelColor=F7F9FA">
-      <img alt="Último commit" src="https://img.shields.io/github/last-commit/pedrovinhas/twitter-storybook?color=1B4B66&labelColor=F7F9FA">
-      <img alt="Licença" src="https://shields.io/badge/license-MIT-ff7f00&?&style=flat?&color=1B4B66&labelColor=F7F9FA">
+      <a href="https://insomnia.rest/run/?label=shopware-api&uri=https%3A%2F%2Fraw.githubusercontent.com%2FPedrovinhas%2Fshopware-api%2Fmain%2Finsomnia.json%3Ftoken%3DGHSAT0AAAAAABQWZW7JDF6N4W6BPWBQZ4CYY44ZENA" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
   </p>  
   
 ## 📌 Sumário
