@@ -10,6 +10,7 @@
       <img alt="Último commit" src="https://img.shields.io/github/last-commit/pedrovinhas/twitter-storybook?color=1B4B66&labelColor=F7F9FA">
       <img alt="Licença" src="https://shields.io/badge/license-MIT-ff7f00&?&style=flat?&color=1B4B66&labelColor=F7F9FA">
   </p>  
+
 ## Shopware-API 🛍
 - Esse é o back-end usado para armazenar as informações de estoque dos produtos e disponibilizado para o front-end consumir os dados.
 
