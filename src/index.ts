@@ -5,6 +5,7 @@ import { router } from './app/routes';
 import 'dotenv/config';
 
 const MONGO_CONNECTION = 'mongodb+srv://mongo:y6mkzuCTVKWrQ61C@cluster0.3hnfkpo.mongodb.net/?retryWrites=true&w=majority';
+const PORT = process.env.PORT || 3003;
 
 mongoose.connect(MONGO_CONNECTION)
   .then(() => {
@@ -23,7 +24,7 @@ mongoose.connect(MONGO_CONNECTION)
     app.use(express.json());
     app.use(router);
 
-    app.listen(port, () => {
+    app.listen(PORT, () => {
       console.log(`🚀 Server is running on http://localhost:${port}`);
     });  
 
