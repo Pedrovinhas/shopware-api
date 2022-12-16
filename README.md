@@ -62,6 +62,15 @@
 |  createdAt | `Date` | 
 |  products | `[ {Schema.Types.ObjectId} ]` | 
 
+### User Diagram
+| Name   | Type       |
+| :---------- | :--------- |
+|  _id | `string` | 
+|  status | `string` | 
+|  createdAt | `Date` | 
+|  products | `[ {Schema.Types.ObjectId} ]` | 
+
+
 ## 📑Endpoints
 
 | Collection   | URL       | METHOD |
