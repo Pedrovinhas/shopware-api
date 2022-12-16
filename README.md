@@ -1,12 +1,12 @@
+<h1 align='center'  >
+  <img 
+   width='100px' height='100px'
+    src='./.github/shopping.png'
+  >
+</h1>
+
 ## Shopware-API 🛍
 - Esse é o back-end usado para armazenar as informações de estoque dos produtos e disponibilizado para o front-end consumir os dados.
-
-
-### Mongo User
-- Usar .env
-
-- mongo
-- y6mkzuCTVKWrQ61C
 
 ## 📔 Models
 
@@ -29,9 +29,6 @@
 |  productAttributes | `Array` | 
 |  category | `Schema.Types.ObjectId` | 
 
-#### Formato aceito no campo ProductAttributes
-`` [{"size":"1 metro", "brand": "Chanel", "color":"pink"}]`` 
-``[{"size":"2 metros", "brand": "D&C", "color":"black"}]`` 
 
 ### Category Diagram
 | Name   | Type       |
