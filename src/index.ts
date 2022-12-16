@@ -4,13 +4,12 @@ import mongoose from 'mongoose';
 import { router } from './app/routes';
 import 'dotenv/config';
 
-const MONGO_CONNECTION = 'mongodb+srv://mongo:y6mkzuCTVKWrQ61C@cluster0.3hnfkpo.mongodb.net/?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 3003;
 
-mongoose.connect(MONGO_CONNECTION)
+mongoose.connect(`${process.env.MONGODB_URI}`)
   .then(() => {
     const app = express();
-    const port = 3003;
+    const port = 3003;    
 
     app.use((req, res, next) => {
       res.setHeader('Access-Control-Allow-Origin', '*');
