@@ -4,7 +4,7 @@ import User from '../../models/User';
 
 export async function listUsers(req: Request, res: Response) {
   try {
-    const users = await User.find();
+    const users = await User.find().populate('address');
 
     res.status(200).json(users);
   } catch (error) {

@@ -7,7 +7,8 @@ export async function registerUser(req: Request, res: Response) {
     name, 
     email, 
     password, 
-    phone 
+    phone,
+    address 
   } = req.body;
   
   try {
@@ -25,6 +26,7 @@ export async function registerUser(req: Request, res: Response) {
       email,
       password,
       phone,
+      address,
       otp : process.env.OTP_CODE
     });
   

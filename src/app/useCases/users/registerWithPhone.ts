@@ -3,11 +3,14 @@ import { Request, Response } from 'express';
 import User from '../../models/User';
 
 export async function registerWithPhone(req: Request, res: Response) {
+  const randomUser = 'User';
+  
   const { 
     phone,
     password,
     otp,
     email,
+    name,
   } = req.body;
 
 
@@ -26,6 +29,7 @@ export async function registerWithPhone(req: Request, res: Response) {
 
     const user = await User.create({ 
       phone,
+      name: randomUser + Math.floor(Math.random() * 10000),
       password: Math.floor(Math.random() * 10000),
       email: hasEmail,
       otp : process.env.OTP_CODE

@@ -28,6 +28,23 @@ const User = new mongoose.Schema({
     required: true,
     select: false,
   },
+  address: {
+    type: [{
+      street: {
+        type: String,
+      },
+      state: {
+        type: String,
+      },
+      city: {
+        type: String,
+      },
+      pinCode: {
+        type: String,
+      }
+    }
+    ]
+  },
   createdAt: {
     type: Date,
     default: Date.now
