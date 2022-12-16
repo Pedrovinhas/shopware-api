@@ -4,7 +4,12 @@
     src='./.github/shopping.png'
   >
 </h1>
-
+ <p align="center">
+      <img alt="Linguagem mais usada na aplicação" src="https://img.shields.io/github/languages/top/pedrovinhas/twitter-storybook?color=1B4B66&labelColor=F7F9FA">
+      <img alt="Linguagens usadas" src="https://img.shields.io/github/languages/count/pedrovinhas/twitter-storybook?color=1B4B66&labelColor=F7F9FA">
+      <img alt="Último commit" src="https://img.shields.io/github/last-commit/pedrovinhas/twitter-storybook?color=1B4B66&labelColor=F7F9FA">
+      <img alt="Licença" src="https://shields.io/badge/license-MIT-ff7f00&?&style=flat?&color=1B4B66&labelColor=F7F9FA">
+  </p>  
 ## Shopware-API 🛍
 - Esse é o back-end usado para armazenar as informações de estoque dos produtos e disponibilizado para o front-end consumir os dados.
 
